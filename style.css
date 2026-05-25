@@ -1,0 +1,131 @@
+/*
+SELETOR{
+    PROPRIEDADE: VALOR;
+}
+*/
+
+
+/*Reset*/
+*{
+    margin: 0;
+}
+
+body{
+    background-color: #000000;
+    background-image: url(img/background.webp);
+    background-size: cover; /*imagem de fundo cobre toda a área*/
+    background-position: top center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    height: 100vh; /*View Height: Unidade de medida baseada no navegador*/
+
+    display: flex;
+    align-items: center; /*alinhamento vertical*/
+    justify-content: center; /*alinhamento horizontal*/
+}
+
+h1{
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+h2{
+    font-size: 24px;
+    margin-top: 26px;
+    margin-bottom: 12px;
+}
+
+p{
+    font-size: 22px;
+}
+
+.genero{
+    font-size: 18px;
+}
+
+/*selecionando o strong que está dentro do elemento "genero"*/
+.genero strong{
+    color: #00F2FF;
+}
+
+.container{
+    width: 96%; /*largura*/
+    max-width: 1259px; /*largura máxima*/
+    height: auto; /*altura*/
+
+    display: flex; /*habilito o uso do flexbox*/
+    align-items: center; /*alinhamento vertical dos filhos*/
+    column-gap: 24px; /*espaço entre os filhos*/
+}
+
+.btn{
+    color: #ffffff;
+    text-decoration: none; /*retirar o sublinhado padrão do link*/
+    display: inline-block;
+    margin-top: 48px; 
+    font-size: 20px;
+    padding: 18px 60px; /*vertical(top/bottom) horizontal (left/right)*/
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    /*border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;*/
+}
+
+.btn:hover{
+    color: #00F2FF;
+    border-color: #00F2FF;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.info-print{
+    /*começa escondido*/
+    display: none;
+}
+
+/*Media Queries -> São condicionais para alterar o layout*/
+
+/*Para larguras de até 767px*/
+@media (max-width: 767px){
+    
+    .poster{
+        display: none;
+    }
+
+    .btn{
+        display: block;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 500px){
+    
+   p{
+    font-size: 18px;
+   }
+
+}
+
+/*Em caso de impressão da página*/
+@media print{
+
+    body{
+        color: #000000;        
+    }
+
+    .btn{
+        display: none;
+    }
+
+    .genero strong{
+        color: #5a5a5a;
+    }
+
+    .info-print{
+        display: block;
+        margin-top: 100px;
+    }
+
+}
